@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+		*{
+			box-sizing: border-box;
+			margin: 0; 
+		}
+		body{
+			scroll-behavior: smooth;
+			font-family: "Merriweather", serif;
+			background: #fbfbfb;
+			overflow-x:hidden;
+		}
+
+		/*navigation*/
+		.wrapper{
+			margin: 0 auto;
+		}
+		nav{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 20px 0;
+		}
+		nav ul{
+			display: flex;
+		}
+		.logo{
+			padding-left: 50px;
+		}
+		.menubar li{
+			list-style: none;
+			margin-right: 70px;
+			transition: transform .3s ease;
+		}
+		.toggle{
+			display: none;
+		}
+
+		.menubar li a{
+			color: #333333;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 20px;
+			font-variant: small-caps;
+			font-feature-settings: 'liga' off;
+			text-decoration: none;
+		}
+		.menubar li:hover{
+			transform: scale(1.1);
+		}
+		#btn-register{
+			padding: 10px 15px;
+			width: 93px;
+			height: 40px;
+			left: calc(50% - 93px/2 + 533.5px);
+			top: calc(50% - 40px/2 - 1966px);
+			border-radius: 3px;
+			background-color: #FFA62F;
+
+		}
+
+		header h1,h1{
+			font-style: normal;
+			font-weight: 500;
+			font-size: 2rem;
+			line-height: 116%;
+			font-variant: small-caps;
+			color: #333333;
+			margin-top: 3%;
+		}
+		h2{
+			font-size: 22px;
+			color: white;
+		}
+		.product-grid {
+		  display: grid;
+		  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+		  grid-gap: 30px;
+		  margin: 40px;
+		}
+
+		.product-item {
+		  background-color: #ffffff;
+		  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		  padding: 20px;
+		  text-align: center;
+		  color: #4b6375;
+		}
+
+		.product-item img {
+		  width: 100%;
+		  height: auto;
+		  transition: transform .5s ease;
+		  margin-bottom: 10px;
+		  border-radius: 1rem;
+		}
+		.product-item img:hover{
+			transform: scale(1.1);
+		}
+
+		.product-item h3 {
+			font-size: 22px;
+		  margin-top: 0;
+		}
+
+		.product-item p {
+			margin-top: 10px;
+		  margin-bottom: 15px;
+		}
+
+		.btn {
+		  display: inline-block;
+		  background-color: #2ba0b7;
+		  color: #fff;
+		  padding: 10px 20px;
+		  border-radius: 5px;
+		  text-decoration: none;
+		  font-size: 16px;
+		  border: none;
+		  cursor: pointer;
+		}
+		.thumbnail{
+			display: grid;
+			grid-template-columns: 700px 1fr;
+			grid-gap: 30px;
+			margin: 40px;
+		}
+		.thumbnail img{
+			width: auto;
+			height: 400px;
+			align-items: center;
+		}
+		footer{
+			display: grid;
+			grid-template-columns: 400px 1fr 1fr;
+			grid-template-rows: 50px;
+			grid-gap: 100px;
+			padding: 60px 70px;
+			background-color:#6F4E37;
+			color: #FEFEFE; 
+		}
+		footer p{
+			margin-bottom: 0;
+		}
+		footer img{
+			display: inline-grid;
+		}
+		.contact img{
+			width: 50px;
+			height: auto;
+		}
+		.payment img{
+			width: 70px;
+			height: auto;
+		}
+		.coprig{
+			grid-column: 1/4;
+			grid-row: 2;
+			margin-top: 50px;
+		}
+		.thumbnail h1{
+			margin: auto;
+			font-size: 40px;
+		}
+		.boxcart{
+			position: relative;
+			width: 100%;
+			min-height: 300px;
+			position: flex;
+			background-color: white;
+			padding: 20px 70px;
+			margin-bottom: 40px;
+		}
+		.nama-produk{
+			float: left;
+			display: inline-block;
+			margin-right: 10px;
+		}
+		.harga-produk{
+			float: right;
+			display: inline-block;
+		}
+		.total{
+			clear: both;
+			float: right;
+			font-weight: bold;
+		}
+		.total-products{
+			font-weight: bolder;
+		}
+		#confirmationModal .modal-body {
+		  max-height: 400px;
+		  overflow-y: auto;
+		}
+		#btn-container{
+			  margin-top: 30px;
+		}
+				.img-produk{
+			max-height: 200px;
+			border-radius: 1rem;
+			    object-fit: cover;
+
+		}
+
+		.btn-cart{
+			display: inline-flex;
+		}
+		.btn-cart button {
+		    margin-left: 2rem;
+		    margin-top: 10px; /* Menambahkan jarak di atas tombol */
+		}
+		.tbl-pesanan{
+			padding: 0 5rem;
+		}
+
+		/* Untuk tampilan layar dengan lebar maksimum 768px */
+		@media screen and (max-width: 768px) {
+			.menubar{
+				display: none;
+		}
+			.toggle {
+		    display: block;
+		    cursor: pointer;
+		  }
+		  .menubar.open {
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		  }
+		  .menubar li {
+    		margin: 10px 0;
+  			}
+		  .product-grid {
+		    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		  }
+		  .product-item p{
+		  	overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    max-width: 400px;
+		  }
+		  .thumbnail{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr;
+			grid-gap: 10px;
+			margin: 10px;
+		}
+		.thumbnail h1{
+			font-size: 20px;
+			padding: 70px 0;
+		}
+		.contact img, .payment img{
+			width: 30px;
+			height: auto;
+		}
+		  footer{
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: auto;
+			grid-gap: 20px;
+			padding: 10px 15px;
+			background-color:#647B64;
+			color: #FEFEFE; 
+			font-size: 12px;
+		}
+		.abt h2, .contact h2, .payment h2{
+			font-size: 14px;
+		}
+
+		/* Untuk tampilan layar dengan lebar minimum 768px dan maksimum 1024px */
+		@media screen and (min-width: 768px) and (max-width: 1024px) {
+		  /* CSS untuk mengatur tata letak pada layar dengan lebar antara 768px dan 1024px */
+		}
+
+		/* Untuk tampilan layar dengan lebar minimum 1024px */
+		@media screen and (min-width: 1024px) {
+		  /* CSS untuk mengatur tata letak pada layar dengan lebar minimum 1024px */
+		}
+	</style>

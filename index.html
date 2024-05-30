@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+
+	<title>Waroengku</title>
+
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+		*{
+			box-sizing: border-box;
+			margin: 0; 
+		}
+		body{
+			scroll-behavior: smooth;
+			font-family: "Merriweather", serif;
+			background: #fbfbfb;
+			overflow-x:hidden;
+		}
+
+		/*navigation*/
+		.wrapper{
+			margin: 0 auto;
+		}
+		nav{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 20px 0;
+		}
+		nav ul{
+			display: flex;
+		}
+		.logo{
+			padding-left: 50px;
+		}
+		.menubar li{
+			list-style: none;
+			margin-right: 70px;
+			transition: transform .3s ease;
+
+		}
+
+		.menubar li a{
+			color: #333333;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 20px;
+			font-variant: small-caps;
+			font-feature-settings: 'liga' off;
+			text-decoration: none;
+		}
+		.menubar li:hover{
+			transform: scale(1.1);
+		}
+		.toggle{
+			display: none;
+		}
+		#btn-register{
+			padding: 10px 15px;
+			width: 93px;
+			height: 40px;
+			left: calc(50% - 93px/2 + 533.5px);
+			top: calc(50% - 40px/2 - 1966px);
+			border-radius: 3px;
+			background-color: #FFA62F;
+
+		}
+
+		/*body*/
+		header{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: 40vw;
+			padding: 0 6rem;
+		}
+		.hero-content{
+			display: flex;
+            flex-direction: column;
+		}
+		header h1{
+			font-style: normal;
+			font-weight: 500;
+			font-size: 48px;
+			line-height: 116%;
+			font-variant: small-caps;
+			color: #333333;
+
+		}
+		h2{
+			font-size: 22px;
+			color: white;
+		}
+		h1{
+			color: #333333;
+		}
+		header p{
+			font-style: normal;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 132%;
+			letter-spacing: 0.04em;
+			color: #4F4F4F;
+			margin-top: 20px;
+		}
+		.btn-landing{
+			margin-top: 3rem;
+			text-align: center;
+			border:none;
+			font-style: normal;
+			font-weight: 600;
+			font-size: 16px;
+			letter-spacing: 0.155em;
+			text-transform: uppercase;
+			color: #FEFEFE;
+			background-color: #FFA62F;
+			padding:20px 50px;
+			text-decoration: none;
+			box-shadow: 0px 20px 40px rgba(128, 143, 150, 0.19);
+			border-radius: 2px;
+		}
+		.brand img{
+			transform: scale(1.4);  /*memperbesar uk gambar*/
+			padding-top: 50px;
+			opacity: 90%;
+			max-height: 65vh; width: auto;
+		}
+		.product-grid {
+		  display: grid;
+		  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+		  grid-gap: 30px;
+		  margin: 40px;
+		}
+
+		.product-item {
+		  background-color: #ffffff;
+		  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		  padding: 20px;
+		  text-align: center;
+		  color: #4b6375;
+		}
+
+		.product-item img {
+		  width: 80%;
+		  height: auto;
+		  transition: transform .5s ease;
+		  margin-bottom: 10px;
+		  border-radius: 1rem;
+		}
+		.product-item img:hover{
+			transform: scale(1.1);
+		}
+
+		.product-item h3 {
+		  margin-top: 0;
+		}
+
+		.product-item p {
+			margin-top: 10px;
+		  margin-bottom: 15px;
+		}
+
+		.btn {
+		  display: inline-block;
+		  background-color: #2ba0b7;
+		  color: #fff;
+		  padding: 10px 20px;
+		  border-radius: 5px;
+		  text-decoration: none;
+		}
+		.thumbnail{
+			display: grid;
+			grid-template-columns: 700px 1fr;
+			grid-gap: 30px;
+			margin: 40px;
+		}
+		.thumbnail img{
+			width: 100%;
+			height: auto;
+		}
+		footer{
+			display: grid;
+			grid-template-columns: 400px 1fr 1fr;
+			grid-template-rows: 50px;
+			grid-gap: 100px;
+			padding: 60px 70px;
+			background-color:#6F4E37;
+			color: #FEFEFE; 
+		}
+		footer img{
+			display: inline-grid;
+		}
+		.contact img{
+			width: 50px;
+			height: auto;
+		}
+		.payment img{
+			width: 70px;
+			height: auto;
+		}
+		.coprig{
+			grid-column: 1/4;
+			grid-row: 2;
+			margin-top: 30px;
+		}
+		.thumbnail h1{
+			margin: auto;
+			font-size: 40px;
+		}
+		.icons {
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		  width: 100%;
+		  max-width: 750px;
+		  margin: 30px auto;
+		}
+
+		.icon-box {
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  flex-direction: column;
+		  width: 100%;
+		  max-width: 100px;
+		  margin-right: 30px;
+		}
+
+		.icon-box i {
+		  font-size: 56px;
+		  margin-bottom: 20px;
+		  color: #444;
+		}
+
+		.icon-box span {
+		  font-size: 16px;
+		  font-weight: bold;
+		  text-align: center;
+		  color: #fff;
+		}
+
+		@media screen and (max-width: 768px) {
+			.menubar{
+				display: none;
+		}
+			.toggle {
+		    display: block;
+		    cursor: pointer;
+		  }
+		  .menubar.open {
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		  }
+		  .menubar li {
+    		margin: 10px 0;
+  			}
+  			.wrapper{
+  				max-width: 100%;
+  			}
+  			.hero-content{
+			position: absolute;
+			width: 100%;
+			height: 400px;
+			left: 30px;
+			top: 150px;
+		}
+		header{
+			min-height: 300px;
+		}
+		header h1{
+			font-size: 25px;
+		}
+		header p{
+			font-size: 14px;
+			line-height: 132%;
+		}
+		.brand img{
+			display: none;
+		}header a{
+			padding: 15px 20px;
+			float: left;
+		}
+		  .product-grid {
+		    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		  }
+		  .product-item p{
+		  	overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    max-width: 400px;
+		  }
+		  .thumbnail{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr;
+			grid-gap: 10px;
+			margin: 10px;
+		}
+		.thumbnail h1{
+			font-size: 20px;
+			padding: 70px 0;
+		}
+		.contact img, .payment img{
+			width: 30px;
+			height: auto;
+		}
+		  footer{
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: auto;
+			grid-gap: 20px;
+			padding: 10px 15px;
+			background-color:#647B64;
+			color: #FEFEFE; 
+			font-size: 12px;
+		}
+		.abt h2, .contact h2, .payment h2{
+			font-size: 14px;
+		}
+
+		@media screen and (max-width: 768px) {
+			.menubar{
+				display: none;
+		}
+		.hero-content{
+			width: 90%;
+		}
+			.toggle {
+		    display: block;
+		    cursor: pointer;
+		  }
+		  .menubar.open {
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		  }
+		  .menubar li {
+    		margin: 10px 0;
+  			}
+		  .product-grid {
+		    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		  }
+		  .product-item p{
+		  	overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    max-width: 400px;
+		  }
+		  .thumbnail{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr;
+			grid-gap: 10px;
+			margin: 10px;
+		}
+		.thumbnail h1{
+			font-size: 20px;
+			padding: 70px 0;
+		}
+		.contact img, .payment img{
+			width: 30px;
+			height: auto;
+		}
+		  footer{
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: auto;
+			grid-gap: 20px;
+			padding: 10px 15px;
+			background-color:#647B64;
+			color: #FEFEFE; 
+			font-size: 12px;
+		}
+		.abt h2, .contact h2, .payment h2{
+			font-size: 14px;
+		}
+		#get{
+			display: none;
+		}
+		.icon-box i {
+		    font-size: 40px;
+		  }
+		  .icon-box {
+		  margin-right: 15px;
+		}
+		@media screen and (min-width: 768px) and (max-width: 1024px) {
+		 	.brand{
+		 		display: none;
+		 	}
+		 	header{
+		 		text-align: center;
+		 	}
+		}
+		/* Untuk tampilan layar dengan lebar minimum 1024px */
+		@media screen and (min-width: 1024px) {
+		}
+	</style>
+</head>
+<body>
+
+	<div class="nav-container">
+		<div class="wrapper">
+			<nav>
+				<div class="logo">
+					<img style="width: 40px;" src="images/logo.png">
+					<span >WAROENG KU</span>
+				</div>
+
+				<ul class="menubar">
+					<li>
+						<a href="index.html">HOME</a>
+					</li>
+
+					<li>
+						<a href="shop.php">MENU</a>
+					</li>
+
+					<li>
+						<a href="#abtus">ABOUT US</a>
+					</li>
+
+					<li>
+						<a href="login.php" target='_blank' id="btn-register">Login</a>
+					</li>
+				</ul>
+				<button class="toggle">=</button>
+			</nav>
+		</div>
+	</div>
+
+	<div class="header-container">
+		<div class="wrapper">
+			<header>
+				<div class="hero-content">
+					<h1>WAROENGKU.</h1>
+					<h1>Enaknya Maknyus!</h1>
+					<a class="btn-landing" href="register.php">DAFTAR SEKARANG YUK</a>
+				</div>
+				<div class="brand">
+					<img src="images/logo.png">
+				</div>
+			</header>
+			
+			<div class="wrapper" style="padding-top: 50px;">
+				<h1 style="font-family:'Avenir Next'; color: #4b6375; text-align: center; margin-left: 30px;">SIGNATURE MENU</h1>
+			<div class="product-grid" id="produk">
+			  <div class="product-item">
+			    <img src="images/dimsum-ayam-kulit-nori.webp" alt="Produk 3">
+			    <h3>Dimsum Ayam Kulit Nori</h3>
+			    <p><del>Rp26.500</del><b>  Rp22.500</b></p>
+			  </div>
+			  <div class="product-item">
+			    <img src="images/wonton-kuah.webp" alt="Produk 4">
+			    <h3>Wonton Kuah Chili Oil</h3>
+			    <p><b>  Rp23.000</b></p>
+			  </div>
+			  <div class="product-item">
+			    <img src="images/dimsum-lumpia.webp" alt="Produk 5">
+			    <h3>Dimsum Lumpia Ayam</h3>
+			    <p><del>22.500</del><b>  Rp 20.000</b></p>
+			  </div>
+			  <div class="product-item">
+			    <img src="images/wonton-saos-pedas.webp" alt="Produk 6">
+			    <h3>Wonton Saos Pedas</h3>
+			    <p><b>  Rp 24.000</b></p>
+			  </div>
+			  <!-- Tambahkan lebih banyak elemen .product-item sesuai kebutuhan -->
+			</div>
+		</div>
+
+		<div class="thumbnail">
+			<img src="images/logo.png" alt="Produk Mardah">
+			<H1 style="text-align: center;">WAROENGKU <br><br> Enak, murah, maknyus!</H1>
+		</div>
+
+		<footer>
+			<div class="abt">
+				<h2>ABOUT WAROENGKU</h2><br>
+				<p>Jalan Swadarma Raya Kampung Baru IV No. 1 Jakarta</p>
+				<p>12250 Indonesia</p>
+				<p>Fax +62 21 585 2439</p>
+			</div>
+				<div class="payment">
+					<h2>PAYMENT</h2><br>
+					<img src="images/bank.png">
+					<img src="images/linkaja.png"><br>
+					<img src="images/gopay.png">
+					<img src="images/ovo.png">
+					<img src="images/dana.png">
+
+				</div>
+				<div class="coprig">
+					<small>&copy;Copyright 2024 | Waroengku</small>
+				</div>
+		</footer>
+	</div>
+</body>
+<script type="text/javascript">
+	const toggle = document.querySelector('.toggle');
+const menu = document.querySelector('.menubar');
+
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('open');
+});
+</script>
+</html>
